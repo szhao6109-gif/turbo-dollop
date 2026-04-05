@@ -101,7 +101,7 @@
         }
 
         .avatar-container {
-            margin-bottom: 20px;
+            margin-bottom: 24px;
             display: inline-block;
         }
 
@@ -121,16 +121,33 @@
         }
 
         .hero h1 {
-            font-size: 56px;
+            font-size: 42px;
             font-weight: 400;
             color: var(--text-primary);
             margin-bottom: 12px;
-            letter-spacing: -1px;
+            letter-spacing: 2px;
+        }
+
+        .hero h1 span {
+            display: inline-block;
         }
 
         .hero h1 span:nth-child(1) { color: var(--google-blue); }
         .hero h1 span:nth-child(2) { color: var(--google-red); }
         .hero h1 span:nth-child(3) { color: var(--google-yellow); }
+        .hero h1 span:nth-child(4) { color: var(--google-green); }
+        .hero h1 span:nth-child(5) { color: var(--google-blue); }
+        .hero h1 span:nth-child(6) { color: var(--google-red); }
+        .hero h1 span:nth-child(7) { color: var(--text-primary); }
+        .hero h1 span:nth-child(8) { color: var(--google-yellow); }
+
+        .motto {
+            font-size: 20px;
+            color: var(--google-blue);
+            margin-bottom: 20px;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
 
         .tagline {
             font-size: 18px;
@@ -564,7 +581,11 @@
             }
 
             .hero h1 {
-                font-size: 36px;
+                font-size: 28px;
+            }
+
+            .motto {
+                font-size: 16px;
             }
 
             .tagline {
@@ -615,7 +636,8 @@
             <div class="avatar-container">
                 <div class="avatar">颖</div>
             </div>
-            <h1><span>赵</span><span>思</span><span>颖</span></h1>
+            <h1><span></span>赵</span><span>思</span><span>颖</span><span>的</span><span>个</span><span>人</span><span>网</span><span>站</span></h1>
+            <p class="motto">与X奋斗，其乐无穷！</p>
             <p class="tagline">
                 <span>清华大学硕士</span>
                 <span>材料与化工</span>
@@ -699,7 +721,6 @@
                 <div class="card-content">
                     <ul>
                         <li>研究方向：金属配合物室温磷光、白光 OLED、荧光成像</li>
-                        <li>导师：XXX 教授</li>
                     </ul>
                 </div>
             </div>
@@ -731,21 +752,21 @@
             <div class="exp-card">
                 <div class="card-header">
                     <div>
-                        <div class="card-title">腾讯科技有限公司</div>
-                        <div class="card-subtitle">产品运营实习生</div>
+                        <div class="card-title">学而思 - 小猴启蒙网课产品</div>
+                        <div class="card-subtitle">推广组长</div>
                     </div>
-                    <span class="card-time">2024.06 - 2024.09</span>
+                    <span class="card-time">2021.07 - 2021.08</span>
                 </div>
                 <div class="card-content">
                     <ul>
-                        <li>负责产品用户调研与需求分析，完成用户画像构建</li>
-                        <li>参与产品功能迭代优化，提升用户活跃度 15%</li>
-                        <li>协助策划线上活动，累计参与用户超 10 万</li>
+                        <li><strong>需求挖掘：</strong>牵头组建 5 人推广小组，调研 K12 阶段家长及学员核心需求，提炼核心卖点，制定推广策略。</li>
+                        <li><strong>用户运营：</strong>搭建线上社群运营体系，通过每日干货输出、场景化产品讲解传递价值，优化用户沟通转化路径，单月社群用户活跃度提升 62%，咨询转化率提升 28%。</li>
+                        <li><strong>业绩突破：</strong>统筹团队推广执行工作，合理分配成员工作任务，把控推广全流程进度，凭借高效协作达成转化目标，个人及团队斩获当月销冠，整体业绩超目标 35%。</li>
                     </ul>
                     <div class="tag-container">
-                        <span class="tag blue">用户调研</span>
-                        <span class="tag green">数据分析</span>
-                        <span class="tag yellow">活动策划</span>
+                        <span class="tag blue">需求挖掘</span>
+                        <span class="tag green">用户运营</span>
+                        <span class="tag yellow">团队协作</span>
                     </div>
                 </div>
             </div>
@@ -761,42 +782,42 @@
             <div class="project-card">
                 <div class="card-header">
                     <div>
-                        <div class="card-title">金属配合物室温磷光材料研究</div>
+                        <div class="card-title">SIGS 研究生会"南国青年"公众号运营项目</div>
                         <div class="card-subtitle">项目负责人</div>
                     </div>
-                    <span class="card-time">2023.10 - 至今</span>
+                    <span class="card-time">2024.09 - 2025.09</span>
                 </div>
                 <div class="card-content">
                     <ul>
-                        <li>设计合成新型金属配合物磷光材料，实现室温下高效磷光发射</li>
-                        <li>优化材料结构，提升磷光量子产率至 85% 以上</li>
-                        <li>研究成果发表于 SCI 期刊，申请发明专利 1 项</li>
+                        <li><strong>项目描述：</strong>负责清华大学 SIGS 研究生会官方公众号"南国青年"整体运营，提升公众号影响力与粉丝粘性。</li>
+                        <li><strong>项目职责：</strong>制定公众号内容运营规划，负责推文选题、撰写与审核，统筹团队完成内容创作。</li>
+                        <li><strong>项目成果：</strong>累计发布推文 130 余篇，公众号平均阅读量提升 45%，粉丝数量增长 2200+。</li>
                     </ul>
                     <div class="tag-container">
-                        <span class="tag blue">材料合成</span>
-                        <span class="tag green">光谱分析</span>
-                        <span class="tag red">论文撰写</span>
+                        <span class="tag blue">公众号运营</span>
+                        <span class="tag green">内容策划</span>
+                        <span class="tag yellow">团队统筹</span>
                     </div>
                 </div>
             </div>
             <div class="project-card">
                 <div class="card-header">
                     <div>
-                        <div class="card-title">白光 OLED 器件制备与性能优化</div>
-                        <div class="card-subtitle">核心成员</div>
+                        <div class="card-title">清华大学深圳国际研究生院招生及人事助理</div>
+                        <div class="card-subtitle">行政助理</div>
                     </div>
-                    <span class="card-time">2024.03 - 2024.08</span>
+                    <span class="card-time">2024.07 - 至今</span>
                 </div>
                 <div class="card-content">
                     <ul>
-                        <li>参与白光 OLED 器件结构设计与制备工艺优化</li>
-                        <li>实现器件外量子效率提升 20%，寿命延长 30%</li>
-                        <li>协助搭建器件测试平台，建立标准化测试流程</li>
+                        <li><strong>项目描述：</strong>全面协助学院招生办公室与人事部门开展内地/国际研究生招生、人事档案、行政统筹等工作。</li>
+                        <li><strong>项目职责：</strong>协助开展硕博招生全流程，材料初审、系统录入、面试筹备接待、档案管理，保障招生工作合规高效；协助教职工招聘升职、入职离职、维护人事系统与数据等。</li>
+                        <li><strong>项目成果：</strong>独立完成大量材料审核、数据录入与面试筹备接待工作，确保招生流程规范、信息准确无误；协助完成教职工招聘、入职离职办理、考勤统计及人事档案管理，有效提升部门行政办事效率，实现招生与人事事务零差错推进。</li>
                     </ul>
                     <div class="tag-container">
-                        <span class="tag yellow">器件制备</span>
-                        <span class="tag blue">性能测试</span>
-                        <span class="tag green">工艺优化</span>
+                        <span class="tag blue">招生管理</span>
+                        <span class="tag green">人事行政</span>
+                        <span class="tag red">流程优化</span>
                     </div>
                 </div>
             </div>
@@ -811,23 +832,33 @@
         <div class="timeline">
             <div class="timeline-item">
                 <div class="timeline-content">
-                    <div class="timeline-title">研究生会宣传部部长</div>
-                    <div class="timeline-time">2023.09 - 至今</div>
-                    <div class="timeline-desc">负责学院宣传工作的统筹规划，管理 10 人团队，完成各类活动的宣传推广工作，累计策划执行 20+ 场活动宣传。</div>
+                    <div class="timeline-title">清华大学深圳国际研究生院 iBHE 研究生分会 - 主席</div>
+                    <div class="timeline-time">2025.08 - 至今</div>
+                    <div class="timeline-desc">
+                        <strong>团队组建：</strong>制定分会组织架构，统筹分会成员招募，设计面试考核维度，打造高效协作的工作团队。<br>
+                        <strong>活动策划：</strong>策划并落地"健康工程杯"、学术论坛、师生交流会等品牌活动，单场活动最高参与人数超 300 人。
+                    </div>
                 </div>
             </div>
             <div class="timeline-item">
                 <div class="timeline-content">
-                    <div class="timeline-title">学生会副主席</div>
-                    <div class="timeline-time">2021.09 - 2022.06</div>
-                    <div class="timeline-desc">协助主席开展学生会日常工作，分管外联部和文艺部，成功组织校园文化节、迎新晚会等大型活动。</div>
+                    <div class="timeline-title">清华大学深圳国际研究生院 SIGS 研究生会宣传部 - 副部长</div>
+                    <div class="timeline-time">2024.09 - 2025.09</div>
+                    <div class="timeline-desc">
+                        <strong>品牌打造：</strong>牵头策划男生节、女生节等校园特色活动，制定活动执行方案，整合宣传资源进行多平台推广。<br>
+                        <strong>文案优化：</strong>搭建宣传部文案标准化审核流程，主导宣传文案的撰写与审核工作，部门文案产出效率提升 50%。
+                    </div>
                 </div>
             </div>
             <div class="timeline-item">
                 <div class="timeline-content">
-                    <div class="timeline-title">青年志愿者协会成员</div>
-                    <div class="timeline-time">2020.09 - 2023.06</div>
-                    <div class="timeline-desc">参与组织多次志愿服务活动，包括社区支教、环保宣传等，累计志愿服务时长超 200 小时。</div>
+                    <div class="timeline-title">西北农林科技大学阳光团工委宣传部 - 负责人</div>
+                    <div class="timeline-time">2021.08 - 2022.08</div>
+                    <div class="timeline-desc">
+                        <strong>稿件撰写：</strong>负责学校团工委各类活动新闻稿审核及撰写工作，稿件采用率达 100%。<br>
+                        <strong>公号运营：</strong>负责团工委官方公众号日常运营，优化公众号内容体系，提升推文平均阅读量，粉丝增长 1500+。<br>
+                        <strong>宣传统筹：</strong>统筹学校团学活动宣传工作，根据不同活动特性制定个性化宣传方案，提升活动知晓率。
+                    </div>
                 </div>
             </div>
         </div>
