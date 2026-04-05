@@ -53,7 +53,7 @@
             padding: 0 24px;
             height: 64px;
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
             background: var(--bg-primary);
             border-bottom: 1px solid var(--border-color);
@@ -84,6 +84,38 @@
         nav a.active {
             background: #E8F0FE;
             color: var(--google-blue);
+        }
+
+        .lang-switch {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            background: var(--bg-secondary);
+            border-radius: 24px;
+            padding: 4px;
+        }
+
+        .lang-btn {
+            padding: 6px 12px;
+            border: none;
+            background: transparent;
+            color: var(--text-secondary);
+            font-size: 13px;
+            font-weight: 500;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-family: inherit;
+        }
+
+        .lang-btn:hover {
+            color: var(--text-primary);
+        }
+
+        .lang-btn.active {
+            background: var(--bg-primary);
+            color: var(--google-blue);
+            box-shadow: var(--shadow-1);
         }
 
         .hero {
@@ -621,14 +653,18 @@
 <body>
     <nav>
         <ul>
-            <li><a href="#home">首页</a></li>
-            <li><a href="#about">关于我</a></li>
-            <li><a href="#education">教育背景</a></li>
-            <li><a href="#internship">实习经历</a></li>
-            <li><a href="#projects">项目经历</a></li>
-            <li><a href="#experience">校园经历</a></li>
-            <li><a href="#contact">联系方式</a></li>
+            <li><a href="#home" data-zh="首页" data-en="Home">首页</a></li>
+            <li><a href="#about" data-zh="关于我" data-en="About">关于我</a></li>
+            <li><a href="#education" data-zh="教育背景" data-en="Education">教育背景</a></li>
+            <li><a href="#internship" data-zh="实习经历" data-en="Internship">实习经历</a></li>
+            <li><a href="#projects" data-zh="项目经历" data-en="Projects">项目经历</a></li>
+            <li><a href="#experience" data-zh="校园经历" data-en="Campus">校园经历</a></li>
+            <li><a href="#contact" data-zh="联系方式" data-en="Contact">联系方式</a></li>
         </ul>
+        <div class="lang-switch">
+            <button class="lang-btn active" data-lang="zh">中文</button>
+            <button class="lang-btn" data-lang="en">EN</button>
+        </div>
     </nav>
 
     <section class="hero" id="home">
@@ -636,25 +672,25 @@
             <div class="avatar-container">
                 <div class="avatar">颖</div>
             </div>
-            <h1><span></span>赵</span><span>思</span><span>颖</span><span>的</span><span>个</span><span>人</span><span>网</span><span>站</span></h1>
-            <p class="motto">与X奋斗，其乐无穷！</p>
+            <h1><span>赵</span><span>思</span><span>颖</span><span>的</span><span>个</span><span>人</span><span>网</span><span>站</span></h1>
+            <p class="motto" data-zh="与X奋斗，其乐无穷！" data-en="Strive with X, endless joy!">与X奋斗，其乐无穷！</p>
             <p class="tagline">
-                <span>清华大学硕士</span>
-                <span>材料与化工</span>
-                <span>追求卓越</span>
+                <span data-zh="清华大学硕士" data-en="Tsinghua Master">清华大学硕士</span>
+                <span data-zh="材料与化工" data-en="Materials & Chemical Eng.">材料与化工</span>
+                <span data-zh="追求卓越" data-en="Pursuing Excellence">追求卓越</span>
             </p>
             <div class="hero-badges">
                 <div class="badge">
                     <span class="badge-icon blue">🎓</span>
-                    清华大学
+                    <span data-zh="清华大学" data-en="Tsinghua University">清华大学</span>
                 </div>
                 <div class="badge">
                     <span class="badge-icon green">🔬</span>
-                    材料与化工
+                    <span data-zh="材料与化工" data-en="Materials & Chemical Eng.">材料与化工</span>
                 </div>
                 <div class="badge">
                     <span class="badge-icon yellow">🏆</span>
-                    国家奖学金
+                    <span data-zh="国家奖学金" data-en="National Scholarship">国家奖学金</span>
                 </div>
             </div>
         </div>
@@ -662,42 +698,42 @@
 
     <section class="section" id="about">
         <div class="section-header">
-            <h2 class="section-title">关于我</h2>
-            <p class="section-subtitle">了解更多关于我的信息</p>
+            <h2 class="section-title" data-zh="关于我" data-en="About Me">关于我</h2>
+            <p class="section-subtitle" data-zh="了解更多关于我的信息" data-en="Learn more about me">了解更多关于我的信息</p>
         </div>
         <div class="about-grid">
             <div class="card about-text">
-                <p>大家好，我是赵思颖，清华大学深圳国际研究生院材料与化工专业硕士研究生。本科毕业于西北农林科技大学制药工程专业，专业排名 TOP 2%。</p>
-                <p>在学术研究方面，我专注于金属配合物室温磷光、白光 OLED 及荧光成像等前沿领域。在校期间多次获得国家级、省级竞赛奖项，具备扎实的专业基础和科研能力。</p>
-                <p>除了学术研究，我积极参与学生工作和社会实践，拥有丰富的活动策划、校园运营、产品推广及部门管理经验，擅长市场调研与用户需求挖掘。</p>
+                <p data-zh="大家好，我是赵思颖，清华大学深圳国际研究生院材料与化工专业硕士研究生。本科毕业于西北农林科技大学制药工程专业，专业排名 TOP 2%。" data-en="Hello, I'm Zhao Siying, a master's student in Materials and Chemical Engineering at Tsinghua University Shenzhen International Graduate School. I graduated from Northwest A&F University with a major in Pharmaceutical Engineering, ranking in the top 2%.">大家好，我是赵思颖，清华大学深圳国际研究生院材料与化工专业硕士研究生。本科毕业于西北农林科技大学制药工程专业，专业排名 TOP 2%。</p>
+                <p data-zh="在学术研究方面，我专注于金属配合物室温磷光、白光 OLED 及荧光成像等前沿领域。在校期间多次获得国家级、省级竞赛奖项，具备扎实的专业基础和科研能力。" data-en="In terms of academic research, I focus on cutting-edge fields such as metal complex room-temperature phosphorescence, white OLED, and fluorescence imaging. During my studies, I have won multiple national and provincial competition awards, with solid professional foundation and research capabilities.">在学术研究方面，我专注于金属配合物室温磷光、白光 OLED 及荧光成像等前沿领域。在校期间多次获得国家级、省级竞赛奖项，具备扎实的专业基础和科研能力。</p>
+                <p data-zh="除了学术研究，我积极参与学生工作和社会实践，拥有丰富的活动策划、校园运营、产品推广及部门管理经验，擅长市场调研与用户需求挖掘。" data-en="Besides academic research, I actively participate in student work and social practice, with rich experience in event planning, campus operations, product promotion, and department management, specializing in market research and user needs analysis.">除了学术研究，我积极参与学生工作和社会实践，拥有丰富的活动策划、校园运营、产品推广及部门管理经验，擅长市场调研与用户需求挖掘。</p>
             </div>
             <div class="info-list">
                 <div class="info-item">
                     <div class="info-icon" style="background: #E8F0FE;">🎓</div>
                     <div class="info-content">
-                        <div class="label">学历</div>
-                        <div class="value">清华大学 硕士在读</div>
+                        <div class="label" data-zh="学历" data-en="Education">学历</div>
+                        <div class="value" data-zh="清华大学 硕士在读" data-en="Tsinghua University, Master's">清华大学 硕士在读</div>
                     </div>
                 </div>
                 <div class="info-item">
                     <div class="info-icon" style="background: #E6F4EA;">🔬</div>
                     <div class="info-content">
-                        <div class="label">研究方向</div>
-                        <div class="value">室温磷光 / OLED / 荧光成像</div>
+                        <div class="label" data-zh="研究方向" data-en="Research">研究方向</div>
+                        <div class="value" data-zh="室温磷光 / OLED / 荧光成像" data-en="RTP / OLED / Fluorescence Imaging">室温磷光 / OLED / 荧光成像</div>
                     </div>
                 </div>
                 <div class="info-item">
                     <div class="info-icon" style="background: #FCE8E6;">📍</div>
                     <div class="info-content">
-                        <div class="label">所在地</div>
-                        <div class="value">深圳</div>
+                        <div class="label" data-zh="所在地" data-en="Location">所在地</div>
+                        <div class="value" data-zh="深圳" data-en="Shenzhen">深圳</div>
                     </div>
                 </div>
                 <div class="info-item">
                     <div class="info-icon" style="background: #FEF7E0;">🏆</div>
                     <div class="info-content">
-                        <div class="label">荣誉</div>
-                        <div class="value">国家奖学金 / 多项竞赛一等奖</div>
+                        <div class="label" data-zh="荣誉" data-en="Honors">荣誉</div>
+                        <div class="value" data-zh="国家奖学金 / 多项竞赛一等奖" data-en="National Scholarship / Multiple First Prizes">国家奖学金 / 多项竞赛一等奖</div>
                     </div>
                 </div>
             </div>
@@ -706,37 +742,37 @@
 
     <section class="section" id="education">
         <div class="section-header">
-            <h2 class="section-title">教育背景</h2>
-            <p class="section-subtitle">我的求学之路</p>
+            <h2 class="section-title" data-zh="教育背景" data-en="Education">教育背景</h2>
+            <p class="section-subtitle" data-zh="我的求学之路" data-en="My Academic Journey">我的求学之路</p>
         </div>
         <div class="edu-grid">
             <div class="edu-card">
                 <div class="card-header">
                     <div>
-                        <div class="card-title">清华大学</div>
-                        <div class="card-subtitle">深圳国际研究生院 · 材料与化工专业</div>
+                        <div class="card-title" data-zh="清华大学" data-en="Tsinghua University">清华大学</div>
+                        <div class="card-subtitle" data-zh="深圳国际研究生院 · 材料与化工专业" data-en="Shenzhen Int'l Grad School · Materials & Chemical Eng.">深圳国际研究生院 · 材料与化工专业</div>
                     </div>
-                    <span class="card-time">2023.09 - 至今</span>
+                    <span class="card-time">2023.09 - Present</span>
                 </div>
                 <div class="card-content">
                     <ul>
-                        <li>研究方向：金属配合物室温磷光、白光 OLED、荧光成像</li>
+                        <li data-zh="研究方向：金属配合物室温磷光、白光 OLED、荧光成像" data-en="Research: Metal complex room-temperature phosphorescence, white OLED, fluorescence imaging">研究方向：金属配合物室温磷光、白光 OLED、荧光成像</li>
                     </ul>
                 </div>
             </div>
             <div class="edu-card">
                 <div class="card-header">
                     <div>
-                        <div class="card-title">西北农林科技大学</div>
-                        <div class="card-subtitle">制药工程专业 · 本科</div>
+                        <div class="card-title" data-zh="西北农林科技大学" data-en="Northwest A&F University">西北农林科技大学</div>
+                        <div class="card-subtitle" data-zh="制药工程专业 · 本科" data-en="Pharmaceutical Engineering · Bachelor's">制药工程专业 · 本科</div>
                     </div>
                     <span class="card-time">2019.09 - 2023.06</span>
                 </div>
                 <div class="card-content">
                     <ul>
-                        <li>专业排名：TOP 2%</li>
-                        <li>主要课程：有机化学、药物化学、药剂学、药物分析等</li>
-                        <li>荣誉奖项：国家奖学金、校级一等奖学金、优秀毕业生</li>
+                        <li data-zh="专业排名：TOP 2%" data-en="Ranking: Top 2%">专业排名：TOP 2%</li>
+                        <li data-zh="主要课程：有机化学、药物化学、药剂学、药物分析等" data-en="Main Courses: Organic Chemistry, Medicinal Chemistry, Pharmaceutics, Pharmaceutical Analysis, etc.">主要课程：有机化学、药物化学、药剂学、药物分析等</li>
+                        <li data-zh="荣誉奖项：国家奖学金、校级一等奖学金、优秀毕业生" data-en="Honors: National Scholarship, University First-class Scholarship, Outstanding Graduate">荣誉奖项：国家奖学金、校级一等奖学金、优秀毕业生</li>
                     </ul>
                 </div>
             </div>
@@ -745,28 +781,28 @@
 
     <section class="section" id="internship">
         <div class="section-header">
-            <h2 class="section-title">实习经历</h2>
-            <p class="section-subtitle">我的职场初体验</p>
+            <h2 class="section-title" data-zh="实习经历" data-en="Internship">实习经历</h2>
+            <p class="section-subtitle" data-zh="我的职场初体验" data-en="My First Workplace Experience">我的职场初体验</p>
         </div>
         <div class="exp-grid">
             <div class="exp-card">
                 <div class="card-header">
                     <div>
-                        <div class="card-title">学而思 - 小猴启蒙网课产品</div>
-                        <div class="card-subtitle">推广组长</div>
+                        <div class="card-title" data-zh="学而思 - 小猴启蒙网课产品" data-en="Xueersi - Little Monkey Enlightenment">学而思 - 小猴启蒙网课产品</div>
+                        <div class="card-subtitle" data-zh="推广组长" data-en="Promotion Team Lead">推广组长</div>
                     </div>
                     <span class="card-time">2021.07 - 2021.08</span>
                 </div>
                 <div class="card-content">
                     <ul>
-                        <li><strong>需求挖掘：</strong>牵头组建 5 人推广小组，调研 K12 阶段家长及学员核心需求，提炼核心卖点，制定推广策略。</li>
-                        <li><strong>用户运营：</strong>搭建线上社群运营体系，通过每日干货输出、场景化产品讲解传递价值，优化用户沟通转化路径，单月社群用户活跃度提升 62%，咨询转化率提升 28%。</li>
-                        <li><strong>业绩突破：</strong>统筹团队推广执行工作，合理分配成员工作任务，把控推广全流程进度，凭借高效协作达成转化目标，个人及团队斩获当月销冠，整体业绩超目标 35%。</li>
+                        <li data-zh="需求挖掘：牵头组建 5 人推广小组，调研 K12 阶段家长及学员核心需求，提炼核心卖点，制定推广策略。" data-en="Needs Analysis: Led a 5-person promotion team, researched core needs of K12 parents and students, extracted key selling points, and developed promotion strategies.">需求挖掘：牵头组建 5 人推广小组，调研 K12 阶段家长及学员核心需求，提炼核心卖点，制定推广策略。</li>
+                        <li data-zh="用户运营：搭建线上社群运营体系，通过每日干货输出、场景化产品讲解传递价值，优化用户沟通转化路径，单月社群用户活跃度提升 62%，咨询转化率提升 28%。" data-en="User Operations: Built online community operation system, delivered value through daily content sharing and scenario-based product explanations, optimized user conversion paths, increased monthly community activity by 62% and consultation conversion rate by 28%.">用户运营：搭建线上社群运营体系，通过每日干货输出、场景化产品讲解传递价值，优化用户沟通转化路径，单月社群用户活跃度提升 62%，咨询转化率提升 28%。</li>
+                        <li data-zh="业绩突破：统筹团队推广执行工作，合理分配成员工作任务，把控推广全流程进度，凭借高效协作达成转化目标，个人及团队斩获当月销冠，整体业绩超目标 35%。" data-en="Performance Breakthrough: Coordinated team promotion execution, allocated tasks reasonably, controlled the entire promotion process, achieved conversion goals through efficient collaboration, won monthly sales champion for both individual and team, exceeded target by 35%.">业绩突破：统筹团队推广执行工作，合理分配成员工作任务，把控推广全流程进度，凭借高效协作达成转化目标，个人及团队斩获当月销冠，整体业绩超目标 35%。</li>
                     </ul>
                     <div class="tag-container">
-                        <span class="tag blue">需求挖掘</span>
-                        <span class="tag green">用户运营</span>
-                        <span class="tag yellow">团队协作</span>
+                        <span class="tag blue" data-zh="需求挖掘" data-en="Needs Analysis">需求挖掘</span>
+                        <span class="tag green" data-zh="用户运营" data-en="User Operations">用户运营</span>
+                        <span class="tag yellow" data-zh="团队协作" data-en="Teamwork">团队协作</span>
                     </div>
                 </div>
             </div>
@@ -775,49 +811,49 @@
 
     <section class="section" id="projects">
         <div class="section-header">
-            <h2 class="section-title">项目经历</h2>
-            <p class="section-subtitle">我的实践成果</p>
+            <h2 class="section-title" data-zh="项目经历" data-en="Projects">项目经历</h2>
+            <p class="section-subtitle" data-zh="我的实践成果" data-en="My Practical Achievements">我的实践成果</p>
         </div>
         <div class="exp-grid">
             <div class="project-card">
                 <div class="card-header">
                     <div>
-                        <div class="card-title">SIGS 研究生会"南国青年"公众号运营项目</div>
-                        <div class="card-subtitle">项目负责人</div>
+                        <div class="card-title" data-zh="SIGS 研究生会"南国青年"公众号运营项目" data-en="SIGS Graduate Union WeChat Account Operation">SIGS 研究生会"南国青年"公众号运营项目</div>
+                        <div class="card-subtitle" data-zh="项目负责人" data-en="Project Lead">项目负责人</div>
                     </div>
                     <span class="card-time">2024.09 - 2025.09</span>
                 </div>
                 <div class="card-content">
                     <ul>
-                        <li><strong>项目描述：</strong>负责清华大学 SIGS 研究生会官方公众号"南国青年"整体运营，提升公众号影响力与粉丝粘性。</li>
-                        <li><strong>项目职责：</strong>制定公众号内容运营规划，负责推文选题、撰写与审核，统筹团队完成内容创作。</li>
-                        <li><strong>项目成果：</strong>累计发布推文 130 余篇，公众号平均阅读量提升 45%，粉丝数量增长 2200+。</li>
+                        <li data-zh="项目描述：负责清华大学 SIGS 研究生会官方公众号"南国青年"整体运营，提升公众号影响力与粉丝粘性。" data-en="Description: Responsible for the overall operation of the official WeChat account 'Southern Youth' of Tsinghua SIGS Graduate Union, enhancing influence and follower engagement.">项目描述：负责清华大学 SIGS 研究生会官方公众号"南国青年"整体运营，提升公众号影响力与粉丝粘性。</li>
+                        <li data-zh="项目职责：制定公众号内容运营规划，负责推文选题、撰写与审核，统筹团队完成内容创作。" data-en="Responsibilities: Developed content operation plans, managed topic selection, writing and review of articles, coordinated the team for content creation.">项目职责：制定公众号内容运营规划，负责推文选题、撰写与审核，统筹团队完成内容创作。</li>
+                        <li data-zh="项目成果：累计发布推文 130 余篇，公众号平均阅读量提升 45%，粉丝数量增长 2200+。" data-en="Achievements: Published over 130 articles, increased average views by 45%, gained 2,200+ new followers.">项目成果：累计发布推文 130 余篇，公众号平均阅读量提升 45%，粉丝数量增长 2200+。</li>
                     </ul>
                     <div class="tag-container">
-                        <span class="tag blue">公众号运营</span>
-                        <span class="tag green">内容策划</span>
-                        <span class="tag yellow">团队统筹</span>
+                        <span class="tag blue" data-zh="公众号运营" data-en="Social Media">公众号运营</span>
+                        <span class="tag green" data-zh="内容策划" data-en="Content Strategy">内容策划</span>
+                        <span class="tag yellow" data-zh="团队统筹" data-en="Team Coordination">团队统筹</span>
                     </div>
                 </div>
             </div>
             <div class="project-card">
                 <div class="card-header">
                     <div>
-                        <div class="card-title">清华大学深圳国际研究生院招生及人事助理</div>
-                        <div class="card-subtitle">行政助理</div>
+                        <div class="card-title" data-zh="清华大学深圳国际研究生院招生及人事助理" data-en="Admissions & HR Assistant at Tsinghua SIGS">清华大学深圳国际研究生院招生及人事助理</div>
+                        <div class="card-subtitle" data-zh="行政助理" data-en="Administrative Assistant">行政助理</div>
                     </div>
-                    <span class="card-time">2024.07 - 至今</span>
+                    <span class="card-time">2024.07 - Present</span>
                 </div>
                 <div class="card-content">
                     <ul>
-                        <li><strong>项目描述：</strong>全面协助学院招生办公室与人事部门开展内地/国际研究生招生、人事档案、行政统筹等工作。</li>
-                        <li><strong>项目职责：</strong>协助开展硕博招生全流程，材料初审、系统录入、面试筹备接待、档案管理，保障招生工作合规高效；协助教职工招聘升职、入职离职、维护人事系统与数据等。</li>
-                        <li><strong>项目成果：</strong>独立完成大量材料审核、数据录入与面试筹备接待工作，确保招生流程规范、信息准确无误；协助完成教职工招聘、入职离职办理、考勤统计及人事档案管理，有效提升部门行政办事效率，实现招生与人事事务零差错推进。</li>
+                        <li data-zh="项目描述：全面协助学院招生办公室与人事部门开展内地/国际研究生招生、人事档案、行政统筹等工作。" data-en="Description: Assisted the Admissions Office and HR Department with domestic/international graduate admissions, personnel files, and administrative coordination.">项目描述：全面协助学院招生办公室与人事部门开展内地/国际研究生招生、人事档案、行政统筹等工作。</li>
+                        <li data-zh="项目职责：协助开展硕博招生全流程，材料初审、系统录入、面试筹备接待、档案管理，保障招生工作合规高效；协助教职工招聘升职、入职离职、维护人事系统与数据等。" data-en="Responsibilities: Assisted with the entire master's and doctoral admissions process including material review, data entry, interview preparation, and file management; supported faculty recruitment, onboarding/offboarding, and HR system maintenance.">项目职责：协助开展硕博招生全流程，材料初审、系统录入、面试筹备接待、档案管理，保障招生工作合规高效；协助教职工招聘升职、入职离职、维护人事系统与数据等。</li>
+                        <li data-zh="项目成果：独立完成大量材料审核、数据录入与面试筹备接待工作，确保招生流程规范、信息准确无误；协助完成教职工招聘、入职离职办理、考勤统计及人事档案管理，有效提升部门行政办事效率，实现招生与人事事务零差错推进。" data-en="Achievements: Independently completed extensive material review, data entry, and interview preparation, ensuring standardized admission processes and accurate information; supported faculty recruitment and HR management, effectively improving administrative efficiency with zero errors.">项目成果：独立完成大量材料审核、数据录入与面试筹备接待工作，确保招生流程规范、信息准确无误；协助完成教职工招聘、入职离职办理、考勤统计及人事档案管理，有效提升部门行政办事效率，实现招生与人事事务零差错推进。</li>
                     </ul>
                     <div class="tag-container">
-                        <span class="tag blue">招生管理</span>
-                        <span class="tag green">人事行政</span>
-                        <span class="tag red">流程优化</span>
+                        <span class="tag blue" data-zh="招生管理" data-en="Admissions">招生管理</span>
+                        <span class="tag green" data-zh="人事行政" data-en="HR Administration">人事行政</span>
+                        <span class="tag red" data-zh="流程优化" data-en="Process Optimization">流程优化</span>
                     </div>
                 </div>
             </div>
@@ -826,39 +862,29 @@
 
     <section class="section" id="experience">
         <div class="section-header">
-            <h2 class="section-title">校园经历</h2>
-            <p class="section-subtitle">我的成长之路</p>
+            <h2 class="section-title" data-zh="校园经历" data-en="Campus Experience">校园经历</h2>
+            <p class="section-subtitle" data-zh="我的成长之路" data-en="My Growth Journey">我的成长之路</p>
         </div>
         <div class="timeline">
             <div class="timeline-item">
                 <div class="timeline-content">
-                    <div class="timeline-title">清华大学深圳国际研究生院 iBHE 研究生分会 - 主席</div>
-                    <div class="timeline-time">2025.08 - 至今</div>
-                    <div class="timeline-desc">
-                        <strong>团队组建：</strong>制定分会组织架构，统筹分会成员招募，设计面试考核维度，打造高效协作的工作团队。<br>
-                        <strong>活动策划：</strong>策划并落地"健康工程杯"、学术论坛、师生交流会等品牌活动，单场活动最高参与人数超 300 人。
-                    </div>
+                    <div class="timeline-title" data-zh="清华大学深圳国际研究生院 iBHE 研究生分会 - 主席" data-en="Tsinghua SIGS iBHE Graduate Branch - President">清华大学深圳国际研究生院 iBHE 研究生分会 - 主席</div>
+                    <div class="timeline-time">2025.08 - Present</div>
+                    <div class="timeline-desc" data-zh="团队组建：制定分会组织架构，统筹分会成员招募，设计面试考核维度，打造高效协作的工作团队。活动策划：策划并落地"健康工程杯"、学术论坛、师生交流会等品牌活动，单场活动最高参与人数超 300 人。" data-en="Team Building: Established the branch organizational structure, coordinated member recruitment, designed interview evaluation criteria, and built an efficient collaborative team. Event Planning: Planned and executed brand events such as 'Health Engineering Cup', academic forums, and teacher-student exchange meetings, with over 300 participants in a single event.">团队组建：制定分会组织架构，统筹分会成员招募，设计面试考核维度，打造高效协作的工作团队。活动策划：策划并落地"健康工程杯"、学术论坛、师生交流会等品牌活动，单场活动最高参与人数超 300 人。</div>
                 </div>
             </div>
             <div class="timeline-item">
                 <div class="timeline-content">
-                    <div class="timeline-title">清华大学深圳国际研究生院 SIGS 研究生会宣传部 - 副部长</div>
+                    <div class="timeline-title" data-zh="清华大学深圳国际研究生院 SIGS 研究生会宣传部 - 副部长" data-en="Tsinghua SIGS Graduate Union Propaganda Dept. - Vice Minister">清华大学深圳国际研究生院 SIGS 研究生会宣传部 - 副部长</div>
                     <div class="timeline-time">2024.09 - 2025.09</div>
-                    <div class="timeline-desc">
-                        <strong>品牌打造：</strong>牵头策划男生节、女生节等校园特色活动，制定活动执行方案，整合宣传资源进行多平台推广。<br>
-                        <strong>文案优化：</strong>搭建宣传部文案标准化审核流程，主导宣传文案的撰写与审核工作，部门文案产出效率提升 50%。
-                    </div>
+                    <div class="timeline-desc" data-zh="品牌打造：牵头策划男生节、女生节等校园特色活动，制定活动执行方案，整合宣传资源进行多平台推广。文案优化：搭建宣传部文案标准化审核流程，主导宣传文案的撰写与审核工作，部门文案产出效率提升 50%。" data-en="Brand Building: Led the planning of campus events such as Boys' Day and Girls' Day, developed execution plans, and integrated promotional resources for multi-platform promotion. Copywriting Optimization: Established standardized review processes for promotional content, led writing and review work, improving department efficiency by 50%.">品牌打造：牵头策划男生节、女生节等校园特色活动，制定活动执行方案，整合宣传资源进行多平台推广。文案优化：搭建宣传部文案标准化审核流程，主导宣传文案的撰写与审核工作，部门文案产出效率提升 50%。</div>
                 </div>
             </div>
             <div class="timeline-item">
                 <div class="timeline-content">
-                    <div class="timeline-title">西北农林科技大学阳光团工委宣传部 - 负责人</div>
+                    <div class="timeline-title" data-zh="西北农林科技大学阳光团工委宣传部 - 负责人" data-en="Northwest A&F University Sunshine Youth League Propaganda Dept. - Head">西北农林科技大学阳光团工委宣传部 - 负责人</div>
                     <div class="timeline-time">2021.08 - 2022.08</div>
-                    <div class="timeline-desc">
-                        <strong>稿件撰写：</strong>负责学校团工委各类活动新闻稿审核及撰写工作，稿件采用率达 100%。<br>
-                        <strong>公号运营：</strong>负责团工委官方公众号日常运营，优化公众号内容体系，提升推文平均阅读量，粉丝增长 1500+。<br>
-                        <strong>宣传统筹：</strong>统筹学校团学活动宣传工作，根据不同活动特性制定个性化宣传方案，提升活动知晓率。
-                    </div>
+                    <div class="timeline-desc" data-zh="稿件撰写：负责学校团工委各类活动新闻稿审核及撰写工作，稿件采用率达 100%。公号运营：负责团工委官方公众号日常运营，优化公众号内容体系，提升推文平均阅读量，粉丝增长 1500+。宣传统筹：统筹学校团学活动宣传工作，根据不同活动特性制定个性化宣传方案，提升活动知晓率。" data-en="Article Writing: Responsible for reviewing and writing news articles for various Youth League activities, with 100% acceptance rate. Account Management: Managed the official WeChat account, optimized content system, increased average views, and gained 1,500+ followers. Promotion Coordination: Coordinated promotional work for campus activities, developed personalized promotion plans based on event characteristics, and increased event awareness.">稿件撰写：负责学校团工委各类活动新闻稿审核及撰写工作，稿件采用率达 100%。公号运营：负责团工委官方公众号日常运营，优化公众号内容体系，提升推文平均阅读量，粉丝增长 1500+。宣传统筹：统筹学校团学活动宣传工作，根据不同活动特性制定个性化宣传方案，提升活动知晓率。</div>
                 </div>
             </div>
         </div>
@@ -866,36 +892,36 @@
 
     <section class="section" id="skills">
         <div class="section-header">
-            <h2 class="section-title">个人优势</h2>
-            <p class="section-subtitle">我的核心竞争力</p>
+            <h2 class="section-title" data-zh="个人优势" data-en="Strengths">个人优势</h2>
+            <p class="section-subtitle" data-zh="我的核心竞争力" data-en="My Core Competencies">我的核心竞争力</p>
         </div>
         <div class="skills-grid">
             <div class="skill-card">
                 <div class="skill-icon blue">🔬</div>
-                <div class="skill-title">科研能力</div>
-                <div class="skill-desc">具备扎实的科研基础，熟练掌握材料合成、表征分析等实验技能，有独立开展科研项目的能力。</div>
+                <div class="skill-title" data-zh="科研能力" data-en="Research Ability">科研能力</div>
+                <div class="skill-desc" data-zh="具备扎实的科研基础，熟练掌握材料合成、表征分析等实验技能，有独立开展科研项目的能力。" data-en="Solid research foundation with proficiency in material synthesis and characterization analysis, capable of conducting independent research projects.">具备扎实的科研基础，熟练掌握材料合成、表征分析等实验技能，有独立开展科研项目的能力。</div>
             </div>
             <div class="skill-card">
                 <div class="skill-icon red">📊</div>
-                <div class="skill-title">数据分析</div>
-                <div class="skill-desc">熟练使用 Python、SPSS 等工具进行数据分析，能够从数据中提取有价值的信息支持决策。</div>
+                <div class="skill-title" data-zh="数据分析" data-en="Data Analysis">数据分析</div>
+                <div class="skill-desc" data-zh="熟练使用 Python、SPSS 等工具进行数据分析，能够从数据中提取有价值的信息支持决策。" data-en="Proficient in using Python, SPSS and other tools for data analysis, able to extract valuable insights from data to support decision-making.">熟练使用 Python、SPSS 等工具进行数据分析，能够从数据中提取有价值的信息支持决策。</div>
             </div>
             <div class="skill-card">
                 <div class="skill-icon green">🤝</div>
-                <div class="skill-title">团队协作</div>
-                <div class="skill-desc">丰富的学生工作经历培养了良好的沟通协调能力，善于团队合作，能够高效推动项目进展。</div>
+                <div class="skill-title" data-zh="团队协作" data-en="Teamwork">团队协作</div>
+                <div class="skill-desc" data-zh="丰富的学生工作经历培养了良好的沟通协调能力，善于团队合作，能够高效推动项目进展。" data-en="Rich student work experience has cultivated excellent communication and coordination skills, adept at teamwork and efficiently driving project progress.">丰富的学生工作经历培养了良好的沟通协调能力，善于团队合作，能够高效推动项目进展。</div>
             </div>
             <div class="skill-card">
                 <div class="skill-icon yellow">✍️</div>
-                <div class="skill-title">文案写作</div>
-                <div class="skill-desc">具备优秀的文字表达能力，能够撰写各类文案、报告，有公众号运营经验。</div>
+                <div class="skill-title" data-zh="文案写作" data-en="Writing Skills">文案写作</div>
+                <div class="skill-desc" data-zh="具备优秀的文字表达能力，能够撰写各类文案、报告，有公众号运营经验。" data-en="Excellent writing skills with the ability to create various types of copy and reports, experienced in WeChat account operation.">具备优秀的文字表达能力，能够撰写各类文案、报告，有公众号运营经验。</div>
             </div>
         </div>
     </section>
 
     <footer id="contact">
         <div class="footer-content">
-            <h2 class="footer-title">联系我</h2>
+            <h2 class="footer-title" data-zh="联系我" data-en="Contact Me">联系我</h2>
             <div class="contact-links">
                 <a href="mailto:amara2577499@163.com" class="contact-link">
                     📧 amara2577499@163.com
@@ -908,9 +934,33 @@
                 </a>
             </div>
             <div class="footer-bottom">
-                © 2024 赵思颖. All rights reserved.
+                © 2024 Zhao Siying. All rights reserved.
             </div>
         </div>
     </footer>
+
+    <script>
+        const langBtns = document.querySelectorAll('.lang-btn');
+        let currentLang = 'zh';
+
+        function switchLanguage(lang) {
+            currentLang = lang;
+            document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+            
+            document.querySelectorAll('[data-zh][data-en]').forEach(el => {
+                el.textContent = el.getAttribute(`data-${lang}`);
+            });
+
+            langBtns.forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.lang === lang);
+            });
+        }
+
+        langBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                switchLanguage(btn.dataset.lang);
+            });
+        });
+    </script>
 </body>
 </html>
