@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>赵思颖 - 个人网站</title>
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --google-blue: #4285F4;
+            --google-red: #EA4335;
+            --google-yellow: #FBBC05;
+            --google-green: #34A853;
+            --text-primary: #202124;
+            --text-secondary: #5F6368;
+            --text-light: #80868B;
+            --bg-primary: #FFFFFF;
+            --bg-secondary: #F8F9FA;
+            --bg-card: #FFFFFF;
+            --border-color: #DADCE0;
+            --shadow-1: 0 1px 2px 0 rgba(60,64,67,0.3), 0 1px 3px 1px rgba(60,64,67,0.15);
+            --shadow-2: 0 1px 3px 0 rgba(60,64,67,0.3), 0 4px 8px 3px rgba(60,64,67,0.15);
+            --shadow-3: 0 4px 8px 3px rgba(60,64,67,0.15), 0 1px 3px rgba(60,64,67,0.3);
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-8px);
+            }
+        }
+
+        body {
+            font-family: 'Google Sans', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--bg-secondary);
+            min-height: 100vh;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 0 24px;
+            height: 64px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: var(--bg-primary);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 8px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-size: 14px;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 24px;
+            transition: all 0.2s ease;
+        }
+
+        nav a:hover {
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+        }
+
+        nav a.active {
+            background: #E8F0FE;
+            color: var(--google-blue);
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 80px 24px 40px;
+            background: var(--bg-primary);
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 600px;
+        }
+
+        .avatar-container {
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--google-blue), var(--google-green));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            color: white;
+            font-weight: 500;
+            box-shadow: var(--shadow-3);
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            font-weight: 400;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+            letter-spacing: -1px;
+        }
+
+        .hero h1 span:nth-child(1) { color: var(--google-blue); }
+        .hero h1 span:nth-child(2) { color: var(--google-red); }
+        .hero h1 span:nth-child(3) { color: var(--google-yellow); }
+
+        .tagline {
+            font-size: 18px;
+            color: var(--text-secondary);
+            margin-bottom: 24px;
+        }
+
+        .tagline span {
+            display: inline-block;
+        }
+
+        .tagline span::after {
+            content: '·';
+            margin: 0 8px;
+            color: var(--text-light);
+        }
+
+        .tagline span:last-child::after {
+            content: '';
+        }
+
+        .hero-badges {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 14px;
+            background: var(--bg-secondary);
+            border-radius: 20px;
+            font-size: 14px;
+            color: var(--text-secondary);
+            border: 1px solid var(--border-color);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .badge:nth-child(1) { animation-delay: 0s; }
+        .badge:nth-child(2) { animation-delay: 0.3s; }
+        .badge:nth-child(3) { animation-delay: 0.6s; }
+
+        .badge-icon {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+        }
+
+        .badge-icon.blue { background: #E8F0FE; color: var(--google-blue); }
+        .badge-icon.red { background: #FCE8E6; color: var(--google-red); }
+        .badge-icon.green { background: #E6F4EA; color: var(--google-green); }
+        .badge-icon.yellow { background: #FEF7E0; color: var(--google-yellow); }
+
+        .section {
+            padding: 60px 24px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 36px;
+        }
+
+        .section-title {
+            font-size: 32px;
+            font-weight: 400;
+            color: var(--text-primary);
+            margin-bottom: 6px;
+        }
+
+        .section-subtitle {
+            font-size: 15px;
+            color: var(--text-secondary);
+        }
+
+        .card {
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: var(--shadow-1);
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .card:hover {
+            box-shadow: var(--shadow-3);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 20px;
+        }
+
+        .about-text p {
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+            font-size: 15px;
+        }
+
+        .about-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        .info-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 12px 16px;
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .info-item:nth-child(1) { animation-delay: 0s; }
+        .info-item:nth-child(2) { animation-delay: 0.3s; }
+        .info-item:nth-child(3) { animation-delay: 0.6s; }
+        .info-item:nth-child(4) { animation-delay: 0.9s; }
+
+        .info-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .info-content .label {
+            font-size: 12px;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .info-content .value {
+            font-size: 14px;
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        .edu-grid, .exp-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .edu-card, .exp-card, .project-card {
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: var(--shadow-1);
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .edu-card:hover, .exp-card:hover, .project-card:hover {
+            box-shadow: var(--shadow-3);
+        }
+
+        .edu-card:nth-child(1), .exp-card:nth-child(1), .project-card:nth-child(1) { animation-delay: 0s; }
+        .edu-card:nth-child(2), .exp-card:nth-child(2), .project-card:nth-child(2) { animation-delay: 0.5s; }
+        .edu-card:nth-child(3), .exp-card:nth-child(3), .project-card:nth-child(3) { animation-delay: 1s; }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .card-title {
+            font-size: 20px;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        .card-subtitle {
+            font-size: 14px;
+            color: var(--google-blue);
+            margin-top: 4px;
+        }
+
+        .card-time {
+            font-size: 14px;
+            color: var(--text-light);
+            background: var(--bg-secondary);
+            padding: 4px 12px;
+            border-radius: 12px;
+        }
+
+        .card-content {
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        .card-content ul {
+            margin-left: 20px;
+            margin-top: 8px;
+        }
+
+        .card-content li {
+            margin-bottom: 6px;
+        }
+
+        .tag-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 12px;
+        }
+
+        .tag {
+            font-size: 12px;
+            padding: 4px 12px;
+            border-radius: 12px;
+            background: var(--bg-secondary);
+            color: var(--text-secondary);
+        }
+
+        .tag.blue { background: #E8F0FE; color: var(--google-blue); }
+        .tag.red { background: #FCE8E6; color: var(--google-red); }
+        .tag.green { background: #E6F4EA; color: var(--google-green); }
+        .tag.yellow { background: #FEF7E0; color: var(--google-yellow); }
+
+        .timeline {
+            position: relative;
+            padding-left: 32px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 7px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--border-color);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 24px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -32px;
+            top: 6px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--google-blue);
+            border: 3px solid var(--bg-primary);
+        }
+
+        .timeline-item:nth-child(2)::before { background: var(--google-red); }
+        .timeline-item:nth-child(3)::before { background: var(--google-yellow); }
+        .timeline-item:nth-child(4)::before { background: var(--google-green); }
+
+        .timeline-content {
+            background: var(--bg-card);
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: var(--shadow-1);
+            border: 1px solid var(--border-color);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .timeline-item:nth-child(1) .timeline-content { animation-delay: 0s; }
+        .timeline-item:nth-child(2) .timeline-content { animation-delay: 0.5s; }
+        .timeline-item:nth-child(3) .timeline-content { animation-delay: 1s; }
+
+        .timeline-title {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+        }
+
+        .timeline-time {
+            font-size: 13px;
+            color: var(--text-light);
+            margin-bottom: 8px;
+        }
+
+        .timeline-desc {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .skill-card {
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: var(--shadow-1);
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .skill-card:hover {
+            box-shadow: var(--shadow-3);
+        }
+
+        .skill-card:nth-child(1) { animation-delay: 0s; }
+        .skill-card:nth-child(2) { animation-delay: 0.3s; }
+        .skill-card:nth-child(3) { animation-delay: 0.6s; }
+        .skill-card:nth-child(4) { animation-delay: 0.9s; }
+
+        .skill-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+
+        .skill-icon.blue { background: #E8F0FE; }
+        .skill-icon.red { background: #FCE8E6; }
+        .skill-icon.green { background: #E6F4EA; }
+        .skill-icon.yellow { background: #FEF7E0; }
+
+        .skill-title {
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--text-primary);
+            margin-bottom: 6px;
+        }
+
+        .skill-desc {
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+
+        footer {
+            background: var(--bg-primary);
+            border-top: 1px solid var(--border-color);
+            padding: 32px 24px;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .footer-title {
+            font-size: 24px;
+            font-weight: 400;
+            color: var(--text-primary);
+            margin-bottom: 20px;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .contact-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: var(--bg-secondary);
+            border-radius: 24px;
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-size: 14px;
+            font-weight: 500;
+            border: 1px solid var(--border-color);
+            transition: all 0.2s ease;
+        }
+
+        .contact-link:hover {
+            background: #E8F0FE;
+            color: var(--google-blue);
+            border-color: var(--google-blue);
+        }
+
+        .footer-bottom {
+            margin-top: 24px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            font-size: 13px;
+            color: var(--text-light);
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 4px;
+            }
+
+            nav a {
+                font-size: 13px;
+                padding: 6px 12px;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .tagline {
+                font-size: 15px;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding: 40px 16px;
+            }
+
+            .section-title {
+                font-size: 24px;
+            }
+
+            .card, .edu-card, .exp-card, .project-card {
+                padding: 20px;
+            }
+
+            .card-header {
+                flex-direction: column;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#home">首页</a></li>
+            <li><a href="#about">关于我</a></li>
+            <li><a href="#education">教育背景</a></li>
+            <li><a href="#internship">实习经历</a></li>
+            <li><a href="#projects">项目经历</a></li>
+            <li><a href="#experience">校园经历</a></li>
+            <li><a href="#contact">联系方式</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="avatar-container">
+                <div class="avatar">颖</div>
+            </div>
+            <h1><span>赵</span><span>思</span><span>颖</span></h1>
+            <p class="tagline">
+                <span>清华大学硕士</span>
+                <span>材料与化工</span>
+                <span>追求卓越</span>
+            </p>
+            <div class="hero-badges">
+                <div class="badge">
+                    <span class="badge-icon blue">🎓</span>
+                    清华大学
+                </div>
+                <div class="badge">
+                    <span class="badge-icon green">🔬</span>
+                    材料与化工
+                </div>
+                <div class="badge">
+                    <span class="badge-icon yellow">🏆</span>
+                    国家奖学金
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="about">
+        <div class="section-header">
+            <h2 class="section-title">关于我</h2>
+            <p class="section-subtitle">了解更多关于我的信息</p>
+        </div>
+        <div class="about-grid">
+            <div class="card about-text">
+                <p>大家好，我是赵思颖，清华大学深圳国际研究生院材料与化工专业硕士研究生。本科毕业于西北农林科技大学制药工程专业，专业排名 TOP 2%。</p>
+                <p>在学术研究方面，我专注于金属配合物室温磷光、白光 OLED 及荧光成像等前沿领域。在校期间多次获得国家级、省级竞赛奖项，具备扎实的专业基础和科研能力。</p>
+                <p>除了学术研究，我积极参与学生工作和社会实践，拥有丰富的活动策划、校园运营、产品推广及部门管理经验，擅长市场调研与用户需求挖掘。</p>
+            </div>
+            <div class="info-list">
+                <div class="info-item">
+                    <div class="info-icon" style="background: #E8F0FE;">🎓</div>
+                    <div class="info-content">
+                        <div class="label">学历</div>
+                        <div class="value">清华大学 硕士在读</div>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon" style="background: #E6F4EA;">🔬</div>
+                    <div class="info-content">
+                        <div class="label">研究方向</div>
+                        <div class="value">室温磷光 / OLED / 荧光成像</div>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon" style="background: #FCE8E6;">📍</div>
+                    <div class="info-content">
+                        <div class="label">所在地</div>
+                        <div class="value">深圳</div>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon" style="background: #FEF7E0;">🏆</div>
+                    <div class="info-content">
+                        <div class="label">荣誉</div>
+                        <div class="value">国家奖学金 / 多项竞赛一等奖</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="education">
+        <div class="section-header">
+            <h2 class="section-title">教育背景</h2>
+            <p class="section-subtitle">我的求学之路</p>
+        </div>
+        <div class="edu-grid">
+            <div class="edu-card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">清华大学</div>
+                        <div class="card-subtitle">深圳国际研究生院 · 材料与化工专业</div>
+                    </div>
+                    <span class="card-time">2023.09 - 至今</span>
+                </div>
+                <div class="card-content">
+                    <ul>
+                        <li>研究方向：金属配合物室温磷光、白光 OLED、荧光成像</li>
+                        <li>导师：XXX 教授</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="edu-card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">西北农林科技大学</div>
+                        <div class="card-subtitle">制药工程专业 · 本科</div>
+                    </div>
+                    <span class="card-time">2019.09 - 2023.06</span>
+                </div>
+                <div class="card-content">
+                    <ul>
+                        <li>专业排名：TOP 2%</li>
+                        <li>主要课程：有机化学、药物化学、药剂学、药物分析等</li>
+                        <li>荣誉奖项：国家奖学金、校级一等奖学金、优秀毕业生</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="internship">
+        <div class="section-header">
+            <h2 class="section-title">实习经历</h2>
+            <p class="section-subtitle">我的职场初体验</p>
+        </div>
+        <div class="exp-grid">
+            <div class="exp-card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">腾讯科技有限公司</div>
+                        <div class="card-subtitle">产品运营实习生</div>
+                    </div>
+                    <span class="card-time">2024.06 - 2024.09</span>
+                </div>
+                <div class="card-content">
+                    <ul>
+                        <li>负责产品用户调研与需求分析，完成用户画像构建</li>
+                        <li>参与产品功能迭代优化，提升用户活跃度 15%</li>
+                        <li>协助策划线上活动，累计参与用户超 10 万</li>
+                    </ul>
+                    <div class="tag-container">
+                        <span class="tag blue">用户调研</span>
+                        <span class="tag green">数据分析</span>
+                        <span class="tag yellow">活动策划</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="projects">
+        <div class="section-header">
+            <h2 class="section-title">项目经历</h2>
+            <p class="section-subtitle">我的实践成果</p>
+        </div>
+        <div class="exp-grid">
+            <div class="project-card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">金属配合物室温磷光材料研究</div>
+                        <div class="card-subtitle">项目负责人</div>
+                    </div>
+                    <span class="card-time">2023.10 - 至今</span>
+                </div>
+                <div class="card-content">
+                    <ul>
+                        <li>设计合成新型金属配合物磷光材料，实现室温下高效磷光发射</li>
+                        <li>优化材料结构，提升磷光量子产率至 85% 以上</li>
+                        <li>研究成果发表于 SCI 期刊，申请发明专利 1 项</li>
+                    </ul>
+                    <div class="tag-container">
+                        <span class="tag blue">材料合成</span>
+                        <span class="tag green">光谱分析</span>
+                        <span class="tag red">论文撰写</span>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">白光 OLED 器件制备与性能优化</div>
+                        <div class="card-subtitle">核心成员</div>
+                    </div>
+                    <span class="card-time">2024.03 - 2024.08</span>
+                </div>
+                <div class="card-content">
+                    <ul>
+                        <li>参与白光 OLED 器件结构设计与制备工艺优化</li>
+                        <li>实现器件外量子效率提升 20%，寿命延长 30%</li>
+                        <li>协助搭建器件测试平台，建立标准化测试流程</li>
+                    </ul>
+                    <div class="tag-container">
+                        <span class="tag yellow">器件制备</span>
+                        <span class="tag blue">性能测试</span>
+                        <span class="tag green">工艺优化</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="experience">
+        <div class="section-header">
+            <h2 class="section-title">校园经历</h2>
+            <p class="section-subtitle">我的成长之路</p>
+        </div>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-title">研究生会宣传部部长</div>
+                    <div class="timeline-time">2023.09 - 至今</div>
+                    <div class="timeline-desc">负责学院宣传工作的统筹规划，管理 10 人团队，完成各类活动的宣传推广工作，累计策划执行 20+ 场活动宣传。</div>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-title">学生会副主席</div>
+                    <div class="timeline-time">2021.09 - 2022.06</div>
+                    <div class="timeline-desc">协助主席开展学生会日常工作，分管外联部和文艺部，成功组织校园文化节、迎新晚会等大型活动。</div>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-title">青年志愿者协会成员</div>
+                    <div class="timeline-time">2020.09 - 2023.06</div>
+                    <div class="timeline-desc">参与组织多次志愿服务活动，包括社区支教、环保宣传等，累计志愿服务时长超 200 小时。</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="skills">
+        <div class="section-header">
+            <h2 class="section-title">个人优势</h2>
+            <p class="section-subtitle">我的核心竞争力</p>
+        </div>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <div class="skill-icon blue">🔬</div>
+                <div class="skill-title">科研能力</div>
+                <div class="skill-desc">具备扎实的科研基础，熟练掌握材料合成、表征分析等实验技能，有独立开展科研项目的能力。</div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon red">📊</div>
+                <div class="skill-title">数据分析</div>
+                <div class="skill-desc">熟练使用 Python、SPSS 等工具进行数据分析，能够从数据中提取有价值的信息支持决策。</div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon green">🤝</div>
+                <div class="skill-title">团队协作</div>
+                <div class="skill-desc">丰富的学生工作经历培养了良好的沟通协调能力，善于团队合作，能够高效推动项目进展。</div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon yellow">✍️</div>
+                <div class="skill-title">文案写作</div>
+                <div class="skill-desc">具备优秀的文字表达能力，能够撰写各类文案、报告，有公众号运营经验。</div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="footer-content">
+            <h2 class="footer-title">联系我</h2>
+            <div class="contact-links">
+                <a href="mailto:amara2577499@163.com" class="contact-link">
+                    📧 amara2577499@163.com
+                </a>
+                <a href="#" class="contact-link">
+                    💻 GitHub
+                </a>
+                <a href="#" class="contact-link">
+                    🔗 LinkedIn
+                </a>
+            </div>
+            <div class="footer-bottom">
+                © 2024 赵思颖. All rights reserved.
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
